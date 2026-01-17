@@ -123,8 +123,6 @@ udp     165    192.168.122.202:3308 -                208.91.112.220:53 -
 ```
 ---
 
----
-
 ## Tools and Technologies
 - FortiGate NGFW
 - Zone-Based Firewalling
