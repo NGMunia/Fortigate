@@ -12,11 +12,9 @@ The objective is to showcase practical skills in **network security, firewall po
 - Zone-based firewalling (Inside / Outside)
 - Interface-to-zone assignment
 - Inter-zone firewall policies
-- Source NAT (SNAT)
+- PAT
 - Secure management access
 - FortiGate CLI configuration
-- Enterprise perimeter firewall design
-
 ---
 
 ## Topology Overview
