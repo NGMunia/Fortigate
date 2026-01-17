@@ -49,8 +49,9 @@ The objective is to showcase practical skills in **network security, firewall po
   end
 ```
 
-- Interfaces assigned to zones instead of using interface-based firewall policies
-
+## Internet Traffic inspection:
+- Fortigate inpects web traffic using Web-filter mechanism (under firewall policy) with FortiGuard category based filter ON
+- Interfaces assigned to zones instead of using interface-based firewall policies.
 
 ```bash
 FortiGate-VM64-KVM # config firewall policy
@@ -67,8 +68,11 @@ config firewall policy
         set action accept
         set schedule "always"
         set service "ALL"
+        set utm-status enable
         set logtraffic-start enable
         set fsso disable
+        set webfilter-profile "default"
+        set ssl-ssh-profile "certificate-inspection"
         set nat enable
     next
 end
@@ -122,6 +126,9 @@ udp     176    192.168.122.202:3308 -                210.7.96.53:53   -
 udp     165    192.168.122.202:3308 -                208.91.112.220:53 -
 ```
 ---
+
+
+
 
 ## Tools and Technologies
 - FortiGate NGFW
