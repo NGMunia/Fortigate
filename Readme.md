@@ -168,4 +168,5 @@ udp     165    192.168.122.202:3308 -                208.91.112.220:53 -
 - FortiGate NGFW
 - Zone-Based Firewalling
 - NAT (PAT)
+- Port Fowarding (DNAT)
 - GNS3 / Lab Environment
