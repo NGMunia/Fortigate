@@ -102,6 +102,34 @@ config system interface
         set device-identification enable
         set role lan
         set snmp-index 2
+    next
+    edit "port3"
+        set vdom "root"
+        set ip 10.255.1.1 255.255.255.0
+        set allowaccess ping
+        set type physical
+        set alias "LAN-2"
+        set device-identification enable
+        set role lan
+        set snmp-index 3
+    next
+    edit "port4"
+        set vdom "root"
+        set ip 44.67.28.2 255.255.255.252
+        set type physical
+        set alias "WAN-Internet"
+        set role wan
+        set snmp-index 4
+    next
+    edit "port10"
+        set vdom "root"
+        set ip 10.255.255.1 255.255.255.0
+        set allowaccess ping https
+        set type physical
+        set alias "DMZ-LAN"
+        set role dmz
+        set snmp-index 1
+
 ```
 
 ### 3. Firewall Policies
@@ -111,10 +139,18 @@ config system interface
 - **OUTSIDE → INSIDE**
   - Denied by default (implicit deny)
   - No inbound access unless explicitly permitted
+- **OUTSIDE → DMZ**
+  - Internet traffic to DMZ allows for web traffic to traverse the firewall to Webserver (80)
+  - DNAT (Port fowarding) is enabled.
 
-### 4. NAT Configuration
+
+  ![Topology](/Topology1.PNG)
+
+
+### 4. PAT Configuration
 - Source NAT configured using PAT
 - Internal IP addresses translated to the Outside interface address
+
 ```bash
 FortiGate-VM64-KVM # get system session list
 PROTO   EXPIRE SOURCE           SOURCE-NAT       DESTINATION      DESTINATION-NAT
@@ -126,8 +162,6 @@ udp     176    192.168.122.202:3308 -                210.7.96.53:53   -
 udp     165    192.168.122.202:3308 -                208.91.112.220:53 -
 ```
 ---
-
-
 
 
 ## Tools and Technologies
