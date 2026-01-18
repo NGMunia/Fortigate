@@ -24,6 +24,7 @@ The objective is to showcase practical skills in **network security, firewall po
 
 - **INSIDE Zone**: Trusted internal LAN
 - **OUTSIDE Zone**: Untrusted external / WAN network
+- **DMZ**: For internal webserver to be accessed on the Inernet
 - FortiGate functions as the perimeter security device
 
 ---
@@ -31,9 +32,10 @@ The objective is to showcase practical skills in **network security, firewall po
 ## Configuration Summary
 
 ### 1. Zone Configuration
-- Created two security zones:
+- Created three security zones:
   - `INSIDE`
   - `OUTSIDE`
+  - `DMZ`
 
 ```bash
   FortiGate-VM64-KVM (zone) # show
