@@ -1,4 +1,4 @@
-# Basic Zone based firewall using Fortigate
+# Zone based firewall using Fortigate
 
 ## Project Overview
 
